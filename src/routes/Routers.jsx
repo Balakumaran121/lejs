@@ -7,15 +7,14 @@ import Order from '../pages/Order'
 const Routers = () => {
   return (
     <BrowserRouter>
-    <Routes>
-        <Route path='/' element={<CommonLayout/>}>
-            <Route path='/' element={<Login/>}/>
-            <Route path="/order" element={<Order/>}/>
+      <Routes>
+        <Route path="/login" element={<Login />} />
+        <Route path="/" element={<CommonLayout />}>
+          <Route path="/order" element={<Order />} />
         </Route>
-    </Routes>
-      
+      </Routes>
     </BrowserRouter>
-  )
+  );
 }
 
 export default Routers
