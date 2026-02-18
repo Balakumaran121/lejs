@@ -1,4 +1,3 @@
-import React from 'react'
 import { useForm } from 'react-hook-form';
 import { useNavigate } from 'react-router-dom';
 
@@ -6,7 +5,6 @@ const Login = () => {
   const navigate = useNavigate()
   const { register, handleSubmit, formState: { errors } } = useForm()
   const onSubmit = (data) => console.log(data)
-  console.log(errors)
   return (
     <div className="flex justify-center items-center min-h-screen w-screen">
       <form onSubmit={handleSubmit(onSubmit)} className="rounded bg-gray-50 border border-gray-100 flex flex-col gap-5  w-[30%] p-5">

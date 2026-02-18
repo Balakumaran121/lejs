@@ -4,6 +4,9 @@ import CommonLayout from '../layout/CommonLayout'
 import Login from '../pages/auth/Login'
 import Order from '../pages/Order'
 import Register from '../pages/auth/Register'
+import PrivateRoute from './PrivateRoute'
+import Favor from '../pages/Favor'
+import Settings from '../pages/Settings'
 
 const Routers = () => {
   return (
@@ -11,8 +14,13 @@ const Routers = () => {
       <Routes>
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
-        <Route path="/" element={<CommonLayout />}>
-          <Route path="/order" element={<Order />} />
+        <Route element={<PrivateRoute />}>
+
+          <Route path="/" element={<CommonLayout />}>
+            <Route path="/order" element={<Order />} />
+            <Route path="/favorites" element={<Favor />} />
+            <Route path="/settings" element={<Settings />} />
+          </Route>
         </Route>
       </Routes>
     </BrowserRouter>
